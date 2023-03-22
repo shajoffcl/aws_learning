@@ -1,7 +1,7 @@
 import aws from 'aws-sdk';
 
-const accessKeyId ="AKIAQBRBP4Z6WNDOUJHF"
-const secretAccessKey = "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"
+const accessKeyId ="AKIAXZWU6EN5QTU2E766"
+const secretAccessKey = "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"
 
 const firehose = new aws.Firehose({
      region: "ap-south-1",
