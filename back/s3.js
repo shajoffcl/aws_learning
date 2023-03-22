@@ -3,6 +3,8 @@
 // import crypto from 'crypto'
 // import { promisify } from "util";
 
+console.log(global.__application, 'app name---');
+
 const aws = require('aws-sdk');
 const crypto = require('crypto');
 const {promisify} = require('util');

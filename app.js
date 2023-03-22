@@ -8,7 +8,7 @@
 // console.log(process.env.NODE_ENV, 'env');
 // import express from 'express';
 // import { generateUploadURL } from './back/s3.js'
-
+global.__application = "aws_learning";
 
 const dotenv = require('dotenv');
 const path   = require('path');
@@ -18,6 +18,7 @@ const express = require('express');
 const generateUploadURL = require('./back/s3.js');
 
 const app = express()
+
 
 app.use(express.static('front'))
 app.use(express.json());
