@@ -9,9 +9,9 @@
   "scripts": {
     "start": "node app.js"
   },
-  "name": "back",
+  "name": "aws_node_ms",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "app.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
