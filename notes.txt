@@ -1,0 +1,6 @@
+#app for s3
+
+Step for creating host in windows:
+1- go to this path
+C:\Windows\System32\drivers\etc
+2- add your public ip with domain
