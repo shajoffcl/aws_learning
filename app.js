@@ -1,6 +1,21 @@
 'use strict';
-import express from 'express'
-import { generateUploadURL } from './back/s3.js'
+// import dotenv from 'dotenv';
+// import path from 'path';
+// import { fileURLToPath } from 'url';
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+// dotenv.config({ path: path.resolve(__dirname, '.env') });
+// console.log(process.env.NODE_ENV, 'env');
+// import express from 'express';
+// import { generateUploadURL } from './back/s3.js'
+
+
+const dotenv = require('dotenv');
+const path   = require('path');
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+console.log(process.env.NODE_ENV, 'env');
+const express = require('express');
+const generateUploadURL = require('./back/s3.js');
 
 const app = express()
 

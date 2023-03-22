@@ -1,14 +1,18 @@
 'use strict';
-import aws from 'aws-sdk'
-import crypto from 'crypto'
-import { promisify } from "util"
-const randomBytes = promisify(crypto.randomBytes)
+// import aws from 'aws-sdk'
+// import crypto from 'crypto'
+// import { promisify } from "util";
 
-const s3URL  = 'https://shaj-personal-upload.s3.ap-south-1.amazonaws.com/'
+const aws = require('aws-sdk');
+const crypto = require('crypto');
+const {promisify} = require('util');
+
+const randomBytes = promisify(crypto.randomBytes);
+const s3URL  = process.env.AWS_S3_BUCKET_URL;
 const region = "ap-south-1"
-const bucketName = "shaj-personal-upload"
-const accessKeyId ="AKIAXZWU6EN5QTU2E766"
-const secretAccessKey = "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"
+const bucketName = process.env.AWS_S3_BUCKET;
+const accessKeyId = process.env.AWS_ACCESS_KEY;
+const secretAccessKey = process.env.AWS_SECRET_KEY;
 const default_path = 'showdown/assets/';
 const file_size = {
   MIN_SIZE: 100,
@@ -45,7 +49,7 @@ async function getUniqueKey() {
 }
 
 
-export async function generateUploadURL(requestObj) {
+module.exports = async function generateUploadURL(requestObj) {
   const {name: fileName, type: contentType, uploadPath = default_path} = requestObj;
   try {
 

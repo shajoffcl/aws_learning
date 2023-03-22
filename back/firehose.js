@@ -1,7 +1,10 @@
-import aws from 'aws-sdk';
+'use strict';
+// import aws from 'aws-sdk';
 
-const accessKeyId ="AKIAXZWU6EN5QTU2E766"
-const secretAccessKey = "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"
+const aws = require('aws-sdk');
+
+const accessKeyId = process.env.AWS_ACCESS_KEY;
+const secretAccessKey = process.env.AWS_SECRET_KEY;
 
 const firehose = new aws.Firehose({
      region: "ap-south-1",
